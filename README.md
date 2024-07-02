@@ -24,7 +24,13 @@ Una vez que el contenedor esté corriendo, se puede acceder a la API en `http://
 
 ## Docker Compose
 
-Este proyecto aún no es estable con docker-compose. Se está trabajando en ello.
+Para correr el proyecto con Docker Compose, se debe correr el siguiente comando en la raíz del proyecto:
+
+```bash
+docker-compose up
+```
+
+Esto creará y correrá el contenedor con la API y la base de datos. A través de la url `http://127.0.0.1:8000` se puede acceder a la API.
 
 ## Endpoints
 
