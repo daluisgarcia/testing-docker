@@ -34,11 +34,11 @@ Esto creará y correrá el contenedor con la API y la base de datos. A través d
 
 ## Endpoints
 
-### GET /saludo
+### GET /saludos
 
 Devuelve la lista de saludos existentes en la base de datos.
 
-### POST /saludo
+### POST /saludos
 
 Crea un nuevo saludo en la base de datos. Se debe enviar un JSON con el siguiente formato:
 
@@ -48,6 +48,6 @@ Crea un nuevo saludo en la base de datos. Se debe enviar un JSON con el siguient
 }
 ```
 
-### GET /saludo/{id}
+### GET /saludos/{id}
 
 Devuelve el saludo con el id especificado.
