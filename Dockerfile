@@ -9,6 +9,9 @@ RUN apt-get update && apt-get install -y gcc default-libmysqlclient-dev pkg-conf
 RUN export MYSQLCLIENT_CFLAGS=`pkg-config mysqlclient --cflags`
 RUN export MYSQLCLIENT_LDFLAGS=`pkg-config mysqlclient --libs`
 
+# Installing production dependencies
+RUN pip install waitress
+
 # Copy the requirements file into the container
 COPY requirements.txt /api_flask/
 
@@ -23,5 +26,5 @@ COPY core/ /api_flask/core/
 # Expose port 8000 for the Flask application
 EXPOSE 5000
 
-# Define the command to run the Flask application using Gunicorn
-CMD ["flask", "run", "--host=0.0.0.0", "--port", "5000"]
+# Define the command to run the Flask application using Waitress (production server)
+CMD ["waitress-serve", "--port=5000", "app:app"]
